@@ -220,7 +220,8 @@ b.max-bold {
     position: relative;
     background-size: cover;
     z-index: 1;
-    background: #aaaaaa;
+    background-image: url(../images/banner2.jpg);
+    opacity: 90%;
 }
 
 .intro-section:before {
