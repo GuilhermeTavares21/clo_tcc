@@ -33,11 +33,15 @@ module.exports = {
     async findOne(req,res){
         try {
             const { name } = req.body;
-            const brecho = await Adm.findOne({ name: name.toLowerCase() })
+            const brecho = await Adm.find({  })
+            const filteredBrecho = brecho.filter(brecho => {
+
+                return brecho.name.includes(name) 
+            })
             if( !brecho ){
                 return res.status(404).json('Brecho não encontrado')
             }
-            return res.status(200).json(brecho)
+            return res.status(200).json(filteredBrecho)
         } catch (error) {
             console.log(error)
             return res.status(500).json('Falha');

@@ -39,7 +39,7 @@
                 </div>
                 <div class="navbar-nav ml-auto">
                     <form class="form-inline my-2 my-lg-0 pr-4 pt-2">
-                        <input class="navsearchbar form-control bg-light border-dark mr-sm-2" type="search" placeholder="Buscar"
+                        <input class="navsearchbar form-control bg-light border-dark mr-sm-2" id="buscar" type="search" placeholder="Buscar"
                             aria-label="Search">
                         <button class="btn btn-outline-dark my-2 my-sm-0 navsearchbutton" type="submit"><i
                                 class="fas fa-search"></i></button>
@@ -2805,6 +2805,23 @@
             sacola.push(produto);
             localStorage.setItem('sacola', JSON.stringify(sacola));
         }
+
+
+        
+        var form = document.querySelector('form')
+        form.addEventListener('submit', function(e) {
+            e.preventDefault()
+            
+            var buscar = document.getElementById('buscar').value
+
+            var a = buscar;
+            console.log(a)
+            localStorage.setItem("buscar", a)
+
+
+            console.log(buscar) 
+            return window.location = "pages/ListBrecho.html"
+        })
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
