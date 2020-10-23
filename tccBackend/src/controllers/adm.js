@@ -132,16 +132,18 @@ module.exports = {
                 avaliate,
                 comment
             })
+            console.log(req.body)
             let mediaEvaluation = 0
             for( const evaluation of adm.evaluation ){
-                console.log(adm.evaluation)
+                // console.log(adm.evaluation)
                 
                 mediaEvaluation = mediaEvaluation + evaluation.avaliate
             }
             adm.mediaEvaluation = mediaEvaluation / adm.evaluation.length
-            console.log(adm.mediaEvaluation)
+            // console.log(adm.mediaEvaluation)
             await adm.save()            
             const admAvaliated = await Adm.findById( req.params.id )
+            console.log(admAvaliated)
             return res.status(200).json( admAvaliated )
 
         } catch (error) {

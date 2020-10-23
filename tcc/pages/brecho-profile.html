@@ -85,7 +85,7 @@
 		<div class="container-fluid">
 			<div class="row px-5">
 				<a class="btn02 mt-3" href="../index.html"><i class="fas fa-arrow-left"></i></a>
-				<a class="btn01 ml-auto mt-3" href="../pages/edit-brecho.html"><i class="fas  fa-cog"></i></a>
+				<a class="btn01 ml-auto mt-3" href="../pages/edit-brecho.html" id="alterarDados"><i class="fas  fa-cog"></i></a>
 			</div>
 		</div>
 		<div class="container">
@@ -275,10 +275,7 @@
 		<input type="text" class="form-control" id="ValorAvaliacao" placeholder="Nota de 0 a 10">
 		<input type="text" class="form-control" id="ComentarioAvaliacao" placeholder="Deixe seu comentário">
 	</div>
-	<button class="btn btn-secondary" id="avaliar" type="button">
-		avaliar
-		<!-- <i class="fa fa-search"></i> -->
-	</button>
+	<button type="button" class="btn btn-secondary" id="avaliar">avaliar</button>
 	<div class="avaliações">
 
 	</div>
@@ -385,8 +382,8 @@
 		var imagePeril = document.getElementById('imagePeril')
 		var descricao = document.getElementById('descricao')
 		var MediaAvaliacao = document.getElementById('MediaAvaliacao')
-		var ValorAvaliacao = document.getElementById('ValorAvaliacao')
-		var ComentarioAvaliacao = document.getElementById('ComentarioAvaliacao')
+
+		
 		var avaliar = document.getElementById('avaliar')
 
 		var alterarDados = document.getElementById('alterarDados')
@@ -401,16 +398,16 @@
 			})
 			.then((resposta) => {
 				resposta.json().then((dados) => {
-					// if(!dados){
-					// 	addProduto.style.visibility = 'hidden'
-					// 	alterarDados.style.visibility = 'hidden'
-					// }
+					if(!dados){
+						addProduto.style.visibility = 'hidden'
+						alterarDados.style.visibility = 'hidden'
+					}
 					// if (dados.message) {
 					// 	return window.location = '404.html'
 					// }
-					// console.log(dados)
+					console.log(dados._id)
 					var { name, phone, email, password, street, numberHouse, complement, image, description, mediaEvaluation, evaluation } = dados;
-					console.log(evaluation)
+					// console.log(evaluation)
 					nome.textContent = name
 					telephone.textContent = phone
 					txtEmail.textContent = email
@@ -418,7 +415,7 @@
 					numero.textContent = numberHouse,
 					complemento.textContent = complement
 					descricao.textContent = description,
-					MediaAvaliacao.textContent = mediaEvaluation
+					MediaAvaliacao.textContent = mediaEvaluation.toFixed(2)
 
 					if (image) {
 						imageUser.src = image.location
@@ -438,25 +435,36 @@
 
 
 
-		// document.addEventListener("DOMContentLoaded", function() {
+		avaliar.addEventListener('click', function() {
+            
+			var ValorAvaliacao = document.getElementById('ValorAvaliacao')
+			var ComentarioAvaliacao = document.getElementById('ComentarioAvaliacao')
+			console.log(ValorAvaliacao.value)
+			console.log(ComentarioAvaliacao.value)
+			fetch(`http://localhost:3333/evaluationAdm/5f9041f6e7cb904490c6fdd4`, {
+				method: "POST",
+				headers: { 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') },
+				body: JSON.stringify({                    
+					avaliate: ValorAvaliacao.value,
+					comment: ComentarioAvaliacao.value
 
-		// 	fetch(`http://localhost:3333/evaluationAdm/5f901eef46df5f07247b030f`, {
-		// 		method: "POST",
-		// 		headers: { 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') },
-		// 		body: JSON.stringify({                    
-		// 			avaliate: ValorAvaliacao,
-		// 			comment: ComentarioAvaliacao
+                })             
+			})
+				.then((resposta) => {
+					resposta.json().then((dados) => {						
+						var { evaluation } = dados;
 
-        //         })             
-		// 	})
-		// 		.then((resposta) => {
-		// 			resposta.json().then((dados) => {						
-		// 				var { avaliate, comment } = dados;
+						console.log(dados)
+						
+						for(avaliations of evaluation){
 
+							console.log(avaliations)
 
-		// 			})
-		// 		})
-		// 	})
+						}
+
+					})
+				})
+			})
 	</script>
 </body>
 
