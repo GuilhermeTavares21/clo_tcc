@@ -69,10 +69,15 @@ box-shadow: 0px 0px 9px 2px rgba(0,0,0,0.43);
 .cards-b .thumb-content {
 	padding: 15px;
 }
-.cards-b .item-price {
-    color: #86bd57;
-    font-size: 14.5px;
+.cards-b .thumb-content .brechotitle{
+	font-size: 22px;
 }
+.cards-b .thumb-content .brechosubtitle{
+	font-size: 15px;
+	color: #333;
+}
+
+
 
 a{
     text-decoration: none !important;

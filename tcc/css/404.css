@@ -6,6 +6,7 @@
 body {
   padding: 0;
   margin: 0;
+  background: rgb(43, 43, 43);
 }
 
 #notfound {
@@ -45,14 +46,14 @@ body {
   font-size: 252px;
   font-weight: 900;
   margin: 0px;
-  color: #262626;
+  color: #b3b3b3;
   text-transform: uppercase;
   letter-spacing: -40px;
   margin-left: -20px;
 }
 
 .notfound .notfound-404 h1>span {
-  text-shadow: -8px 0px 0px #fff;
+  text-shadow: -8px 0px 0px rgb(43, 43, 43);
 }
 
 .notfound .notfound-404 h3 {
@@ -61,7 +62,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #262626;
+  color: #b3b3b3;
   margin: 0px;
   letter-spacing: 3px;
   padding-left: 6px;
@@ -98,4 +99,8 @@ body {
   .notfound h2 {
     font-size: 16px;
   }
+}
+
+.img404{
+  width: 300px;
 }

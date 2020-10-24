@@ -51,9 +51,12 @@
         
     </div>
     <hr>
-    <p class="title1 text-center mx-auto">Resultados encontrados:</p>
+    <div class="mx-auto">
+        <p class="title1 text-center mx-auto">Resultados encontrados:</p>
+        <hr class="linha2">
+    </div>
     <div class="container cards-b">
-        <div id="carregar" class="row mx-auto">
+        <div id="carregar" class="row ">
             
         </div>
     </div>
@@ -98,16 +101,14 @@
                         }
                         console.log(image)
                         brechos +=
-                            "<a href='#' class='col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 mx-auto'>" +
+                            "<a href='#' class='col-xl-4 col-lg-3 col-md-4 col-sm-6 col-12 mb-5'>" +
                             "<div class='thumb-wrapper'>" +
                             "<div class='img-box'>" +
                             "<img src='"+ imagem +"'>" +
                             "</div>" +
                             "<div class='thumb-content'>" +
-                            "<p class='text-uppercase'>"+ name +"</p>" +
-                            "<div>"+ street +"</div>" +
-                            "<div>"+ numberHouse +"</div>" +
-                            "<div>"+ complement +"</div>" +
+                            "<p class='text-uppercase brechotitle'>"+ name +"</p>" +
+                            "<p class='brechosubtitle'>"+ street + ", " + numberHouse + ", " + complement + "</p>" +
                             "</div>" + "</div>" + "</a>" +"<hr>"
                            
                     }
