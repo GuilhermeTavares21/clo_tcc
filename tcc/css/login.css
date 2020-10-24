@@ -236,3 +236,9 @@
   border: 3px solid green;
   padding: 10px;
 }
+
+.loginerror{
+  color: red;
+  text-align: center;
+  font-family: monospace;
+}
