@@ -117,7 +117,8 @@
 	<!-- fim do perfil  -->
 
 	<!-- searchbar -->
-	<div class="container schb">
+	
+	<!-- <div class="container schb">
 		<div class="row mt-5">
 			<div class="col-8 col-lg-10 col-md-10 col-sm-8 input-group searchbar">
 				<input type="text" class="form-control" placeholder="Buscar um produto...">
@@ -140,7 +141,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
 	<!-- fim da searchbar  -->
 
 	<!-- botao adicionar  -->
@@ -269,16 +271,25 @@
 	</div>
 	<!-- fim dos produtos  -->
 
+	<!-- avaliacao -->
 
-	<div> Deixe sua avalização</div>
-	<div class="">
-		<input type="text" class="form-control" id="ValorAvaliacao" placeholder="Nota de 0 a 10">
-		<input type="text" class="form-control" id="ComentarioAvaliacao" placeholder="Deixe seu comentário">
-	</div>
-	<button type="button" class="btn btn-secondary" id="avaliar">avaliar</button>
-	<div class="avaliações">
+	<div class="container containeraval mb-5">
 
+		<p class="titleaval text-center text-uppercase mb-2"> Deixe sua avaliação</p>
+		<div class="col-12 row mx-auto">
+			<input type="text" class="form-control col-6 inputaval" id="ValorAvaliacao" placeholder="Nota de 0 a 10">
+			<input type="text" class="form-control col-6 inputaval" id="ComentarioAvaliacao" placeholder="Deixe seu comentário">
+		</div>
+		<div class="text-center mt-2">
+			<button type="button" class="btn btnaval btn-secondary ml-2" id="avaliar">avaliar</button>
+		</div>
+		<div class="avaliações">
+			
+		</div>
 	</div>
+
+	<!-- fim da avaliacao  -->
+
 	<!-- Footer -->
 	<footer class="page-footer footer font-small blue pt-4">
 		<!-- Footer Links -->

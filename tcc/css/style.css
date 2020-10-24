@@ -75,6 +75,18 @@ body { overflow-x: hidden; }
 	margin-bottom: 1em;
 }
 
+
+.title1 {
+	/* color: rgb(21, 211, 224); */
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 80px;
+	margin-bottom: 1em;
+}
+
 .title1 h2 span {
     font-size: 15px;
     color: #000000;
