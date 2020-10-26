@@ -653,3 +653,12 @@ b.max-bold {
 .avaliações{
     margin-top: 150px;
 }
+.txtheader{
+    color: #fff !important;
+    font-size: 15px !important;
+}
+
+.txtheader span{
+    color: #fff !important;
+    font-size: 15px !important;
+}
