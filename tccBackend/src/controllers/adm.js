@@ -157,8 +157,7 @@ module.exports = {
     async loadAdm(req,res){
         try {
             const admId = req.userId
-            console.log('a')
-            const adm = await Adm.findById(admId)
+            const adm = await Adm.findById(admId).populate("products")
             return res.status(200).json(adm)
         } catch (error) {
             console.log(error)
