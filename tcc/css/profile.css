@@ -645,3 +645,11 @@ b.max-bold {
 	border-color: #000;
 	box-shadow: none;
 }
+.aval{
+    border-bottom: 1px solid rgb(190, 190, 190);
+    border-radius: 10px;
+    color: rgb(73, 73, 73);
+}
+.avaliações{
+    margin-top: 150px;
+}

@@ -434,8 +434,11 @@
 					var avalicações = ""
 
 					for (let i = 0; i < evaluation.length; i++) {
-						avalicações += "<div id='valorAvalido'>"+evaluation[i].avaliate+"</div>"+ 
-						"<div id='comentarioAvalido'>"+evaluation[i].comment+"</div>"
+						avalicações +=
+						"<div class='row mb-5 aval'>" +
+						"<p id='valorAvalido' class='rating col-3 col-xl-1 col-lg-1 col-md-2'>" +evaluation[i].avaliate+" <i class='fa fa-star'></i> </p>"+ 
+						"<p id='comentarioAvalido' class='comment'> Comentário: "+evaluation[i].comment+"</p>" +
+						"</div>"
 					}
 					$('.avaliações').html(avalicações)
 
@@ -476,7 +479,7 @@
 			var ComentarioAvaliacao = document.getElementById('ComentarioAvaliacao')
 			console.log(ValorAvaliacao.value)
 			console.log(ComentarioAvaliacao.value)
-			fetch(`http://localhost:3333/evaluationAdm/5f947a97e4ae9c24fca82c88`, {
+			fetch(`http://localhost:3333/evaluationAdm/5f9040969cc7c7526cfa59c8`, {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') },
 				body: JSON.stringify({                    
